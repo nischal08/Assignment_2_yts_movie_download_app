@@ -1,45 +1,54 @@
 import 'package:assignment_2_yts_api/model/moviesModel.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
   final MoviesModel model;
+
   CustomCard(this.model);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(50),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Card(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.network(
-                      model.movieImgUrl,
-                      scale: 0.8,
-                    ),
-                  )),
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Text(
-                  model.movieName,
-                  style: TextStyle(
+              Column(
+                children: [
+                  Card(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.network(
+                          model.movieImgUrl,
+                          scale: 0.9,
+                        ),
+                      )),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Text(
-                  model.movieRealeaseYear.toString(),
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      model.movieName,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      model.movieRealeaseYear.toString(),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8),
@@ -47,7 +56,7 @@ class CustomCard extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/imdb.png",
-                      scale: 1.2,
+                      scale: 1.3,
                     ),
                     SizedBox(
                       width: 10,
@@ -56,7 +65,7 @@ class CustomCard extends StatelessWidget {
                       model.rating.toString(),
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ],
@@ -64,9 +73,9 @@ class CustomCard extends StatelessWidget {
               ),
             ],
           ),
-          Divider(
-            color: Colors.grey,
-          ),
+          SizedBox(
+            height: 30,
+          )
         ],
       ),
     );

@@ -4,9 +4,11 @@ class MoviesModel {
     this.movieImgUrl,
     this.movieRealeaseYear,
     this.rating,
+    this.id,
   });
-  String movieName;
-  String movieImgUrl;
-  int movieRealeaseYear;
-  dynamic rating;
+  final String movieName;
+  final String movieImgUrl;
+  final int movieRealeaseYear;
+  final dynamic rating;
+  final int id;
 }
