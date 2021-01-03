@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
         colorFilter: ColorFilter.mode(Colors.blueGrey, BlendMode.hardLight),
       )),
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent.withOpacity(.5),
         appBar: AppBar(
           leading: Icon(

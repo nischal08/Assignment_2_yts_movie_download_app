@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:assignment_2_yts_api/model/movieDetailModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,11 +8,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class CustomDetailCard extends StatelessWidget {
   double _height;
+  double _width;
   MovieDetailModel detailModel;
   CustomDetailCard({this.detailModel});
   @override
   Widget build(BuildContext context) {
     _height = MediaQuery.of(context).size.height;
+    _width = MediaQuery.of(context).size.width;
     return _main(context);
   }
 
@@ -309,21 +313,27 @@ class CustomDetailCard extends StatelessWidget {
   }
 
   Widget _genre() {
-    return Row(
-      children: [
-        ...detailModel.genres.map((e) => Card(
-            elevation: 0.1,
-            color: Colors.grey.withOpacity(0.2),
-            child: Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: Text(
-                e,
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            )))
-      ],
+    return SizedBox(
+      width: _width,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            ...detailModel.genres.map((e) => Card(
+                elevation: 0.1,
+                color: Colors.grey.withOpacity(0.2),
+                child: Padding(
+                  padding: const EdgeInsets.all(7.0),
+                  child: Text(
+                    e,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                )))
+          ],
+        ),
+      ),
     );
   }
 }

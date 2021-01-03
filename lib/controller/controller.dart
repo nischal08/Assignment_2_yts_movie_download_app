@@ -39,6 +39,9 @@ class Controller extends GetxController {
   List<Widget> tempList = List();
 
   Future _loadCards() async {
+    tempList.add(SizedBox(
+      height: 80.0,
+    ));
     List<MoviesModel> modelList =
         await getData("https://yts.mx/api/v2/list_movies.json?page=$count");
     for (var i = 0; i < modelList.length; i++) {
@@ -145,7 +148,7 @@ class Controller extends GetxController {
 
     // print(decodedResponse);
     dynamic decodedResponseReady = decodedResponse["data"]["movie"];
-    print(decodedResponseReady["torrents"]);
+
     MovieDetailModel detailModel = MovieDetailModel(
         title: decodedResponseReady["title"],
         realeaseYear: decodedResponseReady["year"],

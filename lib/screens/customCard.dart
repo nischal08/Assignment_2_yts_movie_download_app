@@ -62,7 +62,9 @@ class CustomCard extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      model.rating.toString(),
+                      model.rating.toString() == "0"
+                          ? "N/A"
+                          : model.rating.toString(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
