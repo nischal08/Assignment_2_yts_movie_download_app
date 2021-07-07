@@ -1,3 +1,4 @@
+import 'package:assignment_2_yts_api/screens/home.dart';
 import 'package:assignment_2_yts_api/screens/welcomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: WelcomeScreen(),
+      home: HomePage(),
     );
   }
 }
